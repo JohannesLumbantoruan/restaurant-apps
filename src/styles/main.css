@@ -32,6 +32,7 @@ img {
 
 #header__hamburger {
   font-size: 30px;
+  padding-block: 3px;
 }
 
 /* nav */
@@ -50,13 +51,14 @@ img {
 .nav__list > li {
   list-style-type: none;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: center;
   font-weight: bold;
 
   & > a {
     text-decoration: none;
     color: #fafafa;
+    padding-block: 10px;
   }
 
   & > a:hover {
@@ -66,7 +68,8 @@ img {
 
   &:first-child {
     width: fit-content;
-    margin: 0 auto 20px;
+    margin: 0 auto;
+    padding-block: 5px 20px;
   }
 }
 
@@ -213,11 +216,12 @@ img {
     position: initial;
     display: block;
     width: fit-content;
+    padding: 0;
   }
 
   .nav__list > li {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
 
     &:first-child {
       display: none;
@@ -225,6 +229,7 @@ img {
 
     & > a {
       font-size: 16px;
+      padding-block: 15px;
     }
   }
 

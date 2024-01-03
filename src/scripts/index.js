@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // restaurants card
         const restaurantsCard = document.createElement('div');
         restaurantsCard.classList.add('restaurants__card');
+        restaurantsCard.setAttribute('tabindex', 0);
 
         // restaurants figure
         const restaurantsFigure = document.createElement('figure');
