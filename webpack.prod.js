@@ -1,3 +1,4 @@
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -20,4 +21,29 @@ module.exports = merge(common, {
       },
     ],
   },
+  plugins: [
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: 'sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => {
+            const paths = url.pathname.split('/');
+
+            return paths[1] !== 'images';
+          },
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'dicoding-restaurant-api'
+          }
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/large'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'dicoding-restaurant-image-api'
+          }
+        }
+      ]
+    })
+  ]
 });

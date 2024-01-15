@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
     hamburgerButton: document.querySelector('#header__hamburger'),
@@ -12,6 +13,8 @@ const app = new App({
 
 window.addEventListener('load', async () => {
     app.renderPage();
+
+    swRegister();
 });
 
 window.addEventListener('hashchange', async () => {
