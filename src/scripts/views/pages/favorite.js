@@ -1,21 +1,21 @@
-import DicodingRestaurantApi from '../../data/dicoding-restaurant-api';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { createRestaurantCardTemplate } from '../templates/template-creator';
 
-const List = {
+const Favorite = {
     async render() {
         const hero = document.querySelector('.hero');
 
-        hero.style.display = 'block';
+        hero.style.display = 'none';
 
         return `
-            <h2 class="main__title">Explore Our Restaurants</h2>
+            <h2 class="main__title">Favorite Restaurants</h2>
             <div class="restaurants" id="main-content" tabindex="0">
             </div>
         `;
     },
 
     async afterRender() {
-        const restaurants = await DicodingRestaurantApi.restaurantList();
+        const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
         const restaurantsContainer = document.querySelector('.restaurants');
 
         restaurants.forEach((restaurant) => {
@@ -24,4 +24,4 @@ const List = {
     }
 };
 
-export default List;
+export default Favorite;
