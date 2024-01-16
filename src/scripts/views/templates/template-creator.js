@@ -16,7 +16,8 @@ const createRestaurantCardTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <h2 class="restaurant__name">${restaurant.name}</h2>
-    <h3 class="restaurant__rating">Rating: ⭐ ${restaurant.rating}</h3>
+    <p class="restaurant__rating">Rating: ⭐ ${restaurant.rating}</p>
+    <p class="restaurant__categories">Categories: ${restaurant.categories.map((category) => category.name).join(', ')}</p>
     <figure class="restaurant__figure">
         <img class="restaurant__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo">
         <figcaption class="restaurant__figcaption">${restaurant.address}, ${restaurant.city}</figcaption>
