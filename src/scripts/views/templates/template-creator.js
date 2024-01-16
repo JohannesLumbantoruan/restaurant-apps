@@ -22,6 +22,31 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <figcaption class="restaurant__figcaption">${restaurant.address}, ${restaurant.city}</figcaption>
     </figure>
     <p class="restaurant__description">${restaurant.description}</p>
+    <div class="restaurant__menu">
+        <h3>Menu</h3>
+        <div class="restaurant__menu__foods">
+            <h4>Foods</h4>
+            <ul>
+                ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="restaurant__menu__drinks">
+            <h4 class="restaurant__menu__drinks">Drinks</h4>
+            <ul>
+                ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="restaurant__reviews">
+            <h3>Review</h3>
+            ${restaurant.customerReviews.map((review) => `
+                <div class="restaurant__reviews__item">
+                    <p class="restaurant__reviews__item__name">${review.name}</p>
+                    <p class="restaurant__reviews__item__date">${review.date}</p>
+                    <p class="restaurant__reviews__item__review">${review.review}</p>
+                </div>
+            `).join('')}
+        </div>
+    </div>
 `;
 
 const createLikeButtonTemplate = () => `
