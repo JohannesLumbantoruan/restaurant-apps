@@ -20,7 +20,8 @@ class App {
             hamburgerButton: this._hamburgerButton,
             closeNavButton: this._closeNavButton,
             nav: this._nav,
-            lists: this._lists
+            lists: this._lists,
+            main: this._main
         });
     }
 

@@ -29,7 +29,7 @@ module.exports = merge(common, {
           urlPattern: ({ url }) => {
             const paths = url.pathname.split('/');
 
-            return paths[1] !== 'images';
+            return url.href.startsWith('https://restaurant-api.dicoding.dev') && paths[1] !== 'images';
           },
           handler: 'StaleWhileRevalidate',
           options: {

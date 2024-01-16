@@ -1,6 +1,6 @@
 const DrawerInitiator = {
     init({
-        hamburgerButton, closeNavButton, nav, lists
+        hamburgerButton, closeNavButton, nav, lists, main
     }) {
         hamburgerButton.addEventListener('click', (event) => {
             this._hamburgerButtonClickHandler(event, nav);
@@ -16,6 +16,16 @@ const DrawerInitiator = {
 
         lists.forEach((li) => {
             li.addEventListener('keydown', this._listKeydownHandler);
+        });
+
+        main.addEventListener('click', (event) => {
+            if (window.innerWidth < 576) {
+                this._mainClickHandler(event, closeNavButton);
+            }
+        });
+
+        window.addEventListener('resize', (event) => {
+            this._windowResizeHandler(event, nav);
         });
     },
 
@@ -39,12 +49,21 @@ const DrawerInitiator = {
 
     _listKeydownHandler(event) {
         if (event.key === ' ' || event.key === 'Enter') {
-            // if (event.target.textContent.includes('X')) {
-            //     event.target.click();
-            // } else {
-            //     event.target.
-            // }
             event.target.click();
+        }
+    },
+
+    _mainClickHandler(event, closeNavButton) {
+        event.stopPropagation();
+
+        closeNavButton.click();
+    },
+
+    _windowResizeHandler(event, nav) {
+        if (event.target.innerWidth >= 576 && nav.style.display !== 'block') {
+            nav.style.display = 'block';
+        } else {
+            nav.style.display = 'none';
         }
     }
 };

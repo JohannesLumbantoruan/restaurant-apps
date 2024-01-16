@@ -1,0 +1,18 @@
+{
+    "id": "my-restaurant-catalogue-pwa",
+    "start_url": "./index.html",
+    "name": "My Restaurant Catalogue",
+    "short_name": "My Restaurant",
+    "description": "Find many restaurant with tasty foods from our catalogue",
+    "display": "standalone",
+    "background_color": "#18181b",
+    "theme_color": "#fff",
+    "icons": [
+        {
+            "src": "./favicon.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
