@@ -1,8 +1,9 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import App from './views/app';
-// import swRegister from './utils/sw-register';
-import AddReviewForm from './components/add-review-form';
+import swRegister from './utils/sw-register';
+import './components/add-review-form';
+import './components/rotate-spinner';
 
 const app = new App({
     hamburgerButton: document.querySelector('#header__hamburger'),
@@ -13,9 +14,15 @@ const app = new App({
 });
 
 window.addEventListener('load', async () => {
+    const rotateSpinner = document.querySelector('rotate-spinner');
+
+    rotateSpinner.style.display = 'block';
+
     app.renderPage();
 
-    // swRegister();
+    swRegister();
+
+    rotateSpinner.style.display = 'none';
 });
 
 window.addEventListener('hashchange', async () => {

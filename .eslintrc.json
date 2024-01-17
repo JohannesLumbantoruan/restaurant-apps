@@ -19,6 +19,7 @@
         "no-param-reassign": "off",
         "import/no-extraneous-dependencies": "off",
         "no-console": "off",
-        "no-useless-return": "off"
+        "no-useless-return": "off",
+        "no-alert": "off"
     }
 }
