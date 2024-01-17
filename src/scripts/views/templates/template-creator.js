@@ -37,17 +37,18 @@ const createRestaurantDetailTemplate = (restaurant) => `
                 ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
             </ul>
         </div>
-        <div class="restaurant__reviews">
-            <h3>Review</h3>
-            ${restaurant.customerReviews.map((review) => `
-                <div class="restaurant__reviews__item">
-                    <p class="restaurant__reviews__item__name">${review.name}</p>
-                    <p class="restaurant__reviews__item__date">${review.date}</p>
-                    <p class="restaurant__reviews__item__review">${review.review}</p>
-                </div>
-            `).join('')}
-        </div>
     </div>
+    <div class="restaurant__reviews">
+        <h3>Review</h3>
+        ${restaurant.customerReviews.map((review) => `
+            <div class="restaurant__reviews__item">
+                <p class="restaurant__reviews__item__name">${review.name}</p>
+                <p class="restaurant__reviews__item__date">${review.date}</p>
+                <p class="restaurant__reviews__item__review">${review.review}</p>
+            </div>
+        `).join('')}
+    </div>
+    <add-review-form></add-review-form>
 `;
 
 const createLikeButtonTemplate = () => `

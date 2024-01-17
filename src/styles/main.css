@@ -338,6 +338,14 @@ img {
   cursor: pointer;
 }
 
+/* 
+  add-review-form
+*/
+add-review-form {
+  margin-top: 30px;
+  padding: 20px;
+}
+
 /*
  * media query
 */
@@ -464,5 +472,10 @@ img {
   /* restaurant */
   .restaurant {
     width: 70%;
+  }
+
+  /* add-review-form */
+  add-review-form {
+    padding: 30px 40px;
   }
 }
