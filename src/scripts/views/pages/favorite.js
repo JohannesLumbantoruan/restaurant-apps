@@ -21,6 +21,18 @@ const Favorite = {
         restaurants.forEach((restaurant) => {
             restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
         });
+
+        const restaurantNameElements = document.querySelectorAll('.restaurants__name > a');
+
+        console.log(restaurantNameElements);
+
+        restaurantNameElements.forEach((element) => {
+            element.addEventListener('keydown', (event) => {
+                if (event.key === ' ' || event.key === 'Enter') {
+                    event.target.click();
+                }
+            });
+        });
     }
 };
 
