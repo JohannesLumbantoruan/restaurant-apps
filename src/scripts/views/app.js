@@ -32,6 +32,20 @@ class App {
         this._main.innerHTML = await page.render();
 
         await page.afterRender();
+
+        const skipLink = document.querySelector('.skip-link');
+
+        skipLink.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            document.querySelector('#main-content').focus();
+        });
+
+        skipLink.addEventListener('keydown', (event) => {
+            if (event.key === ' ' || event.key === 'Enter') {
+                document.querySelector('#main-content').focus();
+            }
+        });
     }
 }
 

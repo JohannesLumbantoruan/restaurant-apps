@@ -10,7 +10,7 @@ const Detail = {
         hero.style.display = 'none';
 
         return `
-            <div class="restaurant" id="main-content" tabindex="0"></div>
+            <div class="restaurant"></div>
             <div id="likeButtonContainer"></div>
         `;
     },

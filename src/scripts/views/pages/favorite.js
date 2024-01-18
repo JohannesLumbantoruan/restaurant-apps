@@ -9,7 +9,7 @@ const Favorite = {
 
         return `
             <h2 class="main__title">Favorite Restaurants</h2>
-            <div class="restaurants" id="main-content" tabindex="0">
+            <div class="restaurants">
             </div>
         `;
     },

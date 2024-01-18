@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantCardTemplate = (restaurant) => `
     <div class="restaurants__card" tabindex="0">
         <figure class="restaurants__figure">
-            <img class="restaurants__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo">
+            <img class="restaurants__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
             <figcaption class="restaurants__figcaption">${restaurant.city}</figcaption>
         </figure>
         <div class="restaurants__data">
@@ -19,7 +19,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p class="restaurant__rating">Rating: ⭐ ${restaurant.rating}</p>
     <p class="restaurant__categories">Categories: ${restaurant.categories.map((category) => category.name).join(', ')}</p>
     <figure class="restaurant__figure">
-        <img class="restaurant__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo">
+        <img class="restaurant__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
         <figcaption class="restaurant__figcaption">${restaurant.address}, ${restaurant.city}</figcaption>
     </figure>
     <p class="restaurant__description">${restaurant.description}</p>

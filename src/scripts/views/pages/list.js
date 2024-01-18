@@ -9,7 +9,7 @@ const List = {
 
         return `
             <h2 class="main__title">Explore Our Restaurants</h2>
-            <div class="restaurants" id="main-content" tabindex="0">
+            <div class="restaurants">
             </div>
         `;
     },
@@ -20,6 +20,16 @@ const List = {
 
         restaurants.forEach((restaurant) => {
             restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
+        });
+
+        const restaurantNameElements = document.querySelectorAll('.restaurants__name > a');
+
+        restaurantNameElements.forEach((element) => {
+            element.addEventListener('keydown', (event) => {
+                if (event.key === ' ' || event.key === 'Enter') {
+                    event.target.click();
+                }
+            });
         });
     }
 };
