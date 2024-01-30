@@ -18,13 +18,17 @@ const Favorite = {
         const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
         const restaurantsContainer = document.querySelector('.restaurants');
 
+        if (restaurants.length === 0) {
+            restaurantsContainer.innerHTML = '<h3 class="restaurants__message">No favorite restaurants yet!</h3>';
+
+            return;
+        }
+
         restaurants.forEach((restaurant) => {
             restaurantsContainer.innerHTML += createRestaurantCardTemplate(restaurant);
         });
 
         const restaurantNameElements = document.querySelectorAll('.restaurants__name > a');
-
-        console.log(restaurantNameElements);
 
         restaurantNameElements.forEach((element) => {
             element.addEventListener('keydown', (event) => {
