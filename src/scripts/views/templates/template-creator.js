@@ -4,7 +4,7 @@ const createRestaurantCardTemplate = (restaurant) => `
     <div class="restaurants__card" tabindex="0">
         <figure class="restaurants__figure">
             <picture>
-                <source class="restaurant__photo lazyload" srcset="(max-width: 600px)" data-src="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+                <source class="restaurant__photo lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
                 <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
             </picture>
             <figcaption class="restaurants__figcaption">${restaurant.city}</figcaption>
