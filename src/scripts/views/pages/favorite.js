@@ -26,8 +26,6 @@ const Favorite = {
 
             mainTitle.insertAdjacentElement('afterend', message);
 
-            restaurantsContainer.innerHTML = '<h3 class="restaurants__message">No favorite restaurants yet!</h3>';
-
             return;
         }
 
