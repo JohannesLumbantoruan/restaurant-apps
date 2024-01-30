@@ -19,6 +19,13 @@ const Favorite = {
         const restaurantsContainer = document.querySelector('.restaurants');
 
         if (restaurants.length === 0) {
+            const mainTitle = document.querySelector('.main__title');
+            const message = document.createElement('h3');
+            message.textContent = 'No favorite restaurants yet!';
+            message.classList.add('restaurants__message');
+
+            mainTitle.insertAdjacentElement('afterend', message);
+
             restaurantsContainer.innerHTML = '<h3 class="restaurants__message">No favorite restaurants yet!</h3>';
 
             return;
