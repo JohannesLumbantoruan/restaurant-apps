@@ -4,6 +4,8 @@ import App from './views/app';
 import swRegister from './utils/sw-register';
 import './components/add-review-form';
 import './components/rotate-spinner';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
     hamburgerButton: document.querySelector('#header__hamburger'),

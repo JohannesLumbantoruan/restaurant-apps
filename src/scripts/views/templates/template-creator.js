@@ -3,7 +3,10 @@ import CONFIG from '../../globals/config';
 const createRestaurantCardTemplate = (restaurant) => `
     <div class="restaurants__card" tabindex="0">
         <figure class="restaurants__figure">
-            <img class="restaurants__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+            <picture>
+                <source class="restaurant__photo lazyload" srcset="(max-width: 600px)" data-src="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+                <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+            </picture>
             <figcaption class="restaurants__figcaption">${restaurant.city}</figcaption>
         </figure>
         <div class="restaurants__data">
@@ -19,7 +22,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p class="restaurant__rating">Rating: ⭐ ${restaurant.rating}</p>
     <p class="restaurant__categories">Categories: ${restaurant.categories.map((category) => category.name).join(', ')}</p>
     <figure class="restaurant__figure">
-        <img class="restaurant__photo" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+        <picture>
+            <source class="restaurant__photo lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+            <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+        </picture>
         <figcaption class="restaurant__figcaption">${restaurant.address}, ${restaurant.city}</figcaption>
     </figure>
     <p class="restaurant__description">${restaurant.description}</p>
