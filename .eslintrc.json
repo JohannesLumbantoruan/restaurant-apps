@@ -24,6 +24,8 @@
         "no-alert": "off",
         "max-len": "off",
         "no-prototype-builtins": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "no-plusplus": "off",
+        "no-await-in-loop": "off"
     }
 }
