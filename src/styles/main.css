@@ -33,6 +33,9 @@ img {
 #header__hamburger {
   font-size: 30px;
   padding-block: 3px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
 }
 
 /* nav */
@@ -172,7 +175,7 @@ img {
 
 .restaurants__rating {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .restaurants__name {
@@ -181,6 +184,10 @@ img {
   & > a {
     text-decoration: none;
     color: #fff;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-block;
+    font-size: 1.5em;
 
     &:hover {
       color: yellow;

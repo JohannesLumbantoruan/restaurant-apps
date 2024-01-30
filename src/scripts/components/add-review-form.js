@@ -36,7 +36,8 @@ class AddReviewForm extends LitElement {
             }
 
             & > :not(label) {
-                padding: 5px;
+                padding: 5px 10px;
+                min-height: 44px;
                 font-family: Tahoma, Arial, Verdana, sans-serif;
 
                 &::placeholder {
@@ -52,8 +53,9 @@ class AddReviewForm extends LitElement {
         button {
             display: block;
             width: 100%;
-            padding-block: 5px;
+            padding-block: 5px 10px;
             margin-block: 20px 10px;
+            min-height: 44px;
         }
 
         /* media query */
