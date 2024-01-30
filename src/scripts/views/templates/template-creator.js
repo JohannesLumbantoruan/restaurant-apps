@@ -5,7 +5,7 @@ const createRestaurantCardTemplate = (restaurant) => `
         <figure class="restaurants__figure">
             <picture>
                 <source class="restaurant__photo lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
-                <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+                <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" crossorigin="anonymous">
             </picture>
             <figcaption class="restaurants__figcaption">${restaurant.city}</figcaption>
         </figure>
@@ -24,7 +24,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <figure class="restaurant__figure">
         <picture>
             <source class="restaurant__photo lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_SMALL_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
-            <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="restaurant's photo" crossorigin="anonymous">
+            <img class="restaurants__photo lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" crossorigin="anonymous">
         </picture>
         <figcaption class="restaurant__figcaption">${restaurant.address}, ${restaurant.city}</figcaption>
     </figure>
